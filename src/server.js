@@ -20,4 +20,3 @@ const PORT = config.port || 3001
 
 app.listen(PORT, console.log('rodando na porta', PORT));
 
-    // Jamie Young
