@@ -5,7 +5,7 @@ const routes = require('./routes');
 const app = express();
 
 // Mongoose Configs
-mongoose.connect(config.db_connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(config.db_connection_string, { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', error => console.log('connection error!' + error));
 db.once('open', () => { console.log("we're connected") });
