@@ -2,7 +2,7 @@ const express = require('express');
 const routes = express.Router();
 
 // Imported controllers
-const authControllers = require('./controllers/authControllers');
+const loginControllers = require('./controllers/loginControllers');
 const createUserCrontroller = require('./controllers/createUserControllers');
 const protectedRoutesController = require('./controllers/protectedRoutesControllers');
 
@@ -19,7 +19,7 @@ routes.get('/public', (req,res) => {
 
 
 // Rota de Login de usuários!               -------------------- LOGIN!
-routes.post('/login', authControllers.index);
+routes.post('/login', loginControllers.index);
 
 // Rota de criação de usuários!             -------------------- REGISTRATION!
 routes.post('/createuser', createUserCrontroller.store);

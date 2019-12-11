@@ -1,6 +1,10 @@
+const jwt = require('jsonwebtoken');
+const config = require('../config');
+
 module.exports = {
     async index(req, res) {
-        console.log(res.locals.auth_data)
-        return res.send({ message: 'Bem vindo a Rota Protegida!' })
+            return res.send({ message: 'Bem vindo a Rota Protegida!' })
+        // console.log(req.headers.auth)
+        // console.log(res.locals.auth_data)
     }
 }

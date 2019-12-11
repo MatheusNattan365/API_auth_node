@@ -10,8 +10,7 @@ const UsersSchema = new Schema({
 });
 
 // Função antes de salvar
-// Não usa ArrowFunction por conta do contexto do this
-// nessa função.
+// Não usa ArrowFunction por conta do contexto do this nessa função.
 
 UsersSchema.pre('save', async function (next) {
     let user = this;

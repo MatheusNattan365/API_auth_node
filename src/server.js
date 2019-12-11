@@ -5,7 +5,7 @@ const routes = require('./routes');
 const app = express();
 
 // Mongoose Configs
-mongoose.connect(config.db_connection_string, { useNewUrlParser: true });
+mongoose.connect(config.db_connection_string, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', error => console.log('connection error!' + error));
 db.once('open', () => { console.log("we're connected") });
@@ -16,7 +16,8 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 
 app.use(routes);
 
-const PORT = config.port || 3000
+const PORT = config.port || 3001
 
-app.listen(PORT,
-    console.log('rodando na porta', PORT))
+app.listen(PORT, console.log('rodando na porta', PORT));
+
+    // Jamie Young
